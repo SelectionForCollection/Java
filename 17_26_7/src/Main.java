@@ -10,17 +10,17 @@ public class Main {
 //        }
 //        System.out.println();
 //        for(int i = 0; i< arr.size();i++){
-//            System.out.println(arr.get(i));
+//            System.out.println(i + " " + arr.get(i));
 //        }
 //        arr.remove(1);
 //        System.out.println();
 //        for(int i = 0; i< arr.size();i++){
-//            System.out.println(arr.get(i));
+//            System.out.println(i + " " + arr.get(i));
 //        }
 //        arr.set(0,"Изменен)))))))))))))))))))))))))))))");
 //        System.out.println();
 //        for(int i = 0; i< arr.size();i++){
-//            System.out.println(arr.get(i));
+//            System.out.println(i + " " + arr.get(i));
 //        }
         //////////////////////////////////////////////////////////////////////////////////////////////////
         MyArrayList<Integer> arr1 = new MyArrayList<>();
