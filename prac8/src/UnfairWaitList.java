@@ -27,7 +27,7 @@ public class UnfairWaitList<T> extends WaitList {
             if(!deletedElements.contains(element)){
                 super.add(element);
             }else{
-                super.add(element);
+                super.add(deletedElements.element());
                 deletedElements.remove(element);
             }
         }else{
