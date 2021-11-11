@@ -38,9 +38,16 @@ public class Test {
     }
     public void testUnfairWaitList(){
         UnfairWaitList<Integer> UnfairWaitList = new UnfairWaitList<Integer>();//Объявление экзепляра UnfairWaitList для тестирования конструктора по умоляанию
+        UnfairWaitList.add(1);
+        UnfairWaitList.add(1);
+        UnfairWaitList.add(2);
+        UnfairWaitList.add(3);
+        UnfairWaitList.add(4);
+        System.out.println(UnfairWaitList.toString());
         UnfairWaitList.moveToBack(1);
         UnfairWaitList.remove(3);
-
+        System.out.println(UnfairWaitList.toString());
+        UnfairWaitList.remove(1);
     }
 
 }
