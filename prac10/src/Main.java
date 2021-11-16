@@ -27,7 +27,7 @@ class Client implements Chair{
     private Chair chair;
     Client(Chair chair){
         this.chair = chair;
-    };
+    }
 
     @Override
     public void sitting() {
