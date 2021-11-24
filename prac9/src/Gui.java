@@ -54,7 +54,7 @@ public class Gui extends JFrame {
                                 label.setText("incorrect data");
                             }
                         } catch (NumberFormatException y) {
-                            label.setText(String.valueOf(y));
+                            label.setText(String.valueOf(new MyExeption(String.valueOf(y))));
                         }
                     }
                 }
