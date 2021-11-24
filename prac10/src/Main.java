@@ -12,37 +12,59 @@ class VictorianChair implements Chair {
 class MultifunctionalChair implements Chair {
     @Override
     public void sitting() {
-        System.out.println("Вы сидите на Многофункциональном стуле");
+        System.out.println("Вы сидите на Мультифункциональном стуле");
     }
 }
 
 class MagicChair implements Chair {
     @Override
     public void sitting() {
-        System.out.println("Вы сидите на Магическом стуле");
+        System.out.println("Вы сидите на Магический стуле");
     }
 }
 
-class Client implements Chair{
-    private Chair chair;
-    Client(Chair chair){
-        this.chair = chair;
-    }
+interface ChairFactory {
+    Chair createChair();
+}
 
+class VictorianChairFactory implements ChairFactory{
     @Override
-    public void sitting() {
+    public Chair createChair() {
+        return new VictorianChair();
+    }
+}
+
+class MultifunctionalChairFactory implements ChairFactory{
+    @Override
+    public Chair createChair() {
+        return new MultifunctionalChair();
+    }
+}
+
+class MagicChairFactory implements ChairFactory{
+    @Override
+    public Chair createChair() {
+        return new MagicChair();
+    }
+}
+
+class Client {
+    private ChairFactory factory;
+    private Chair chair;
+
+    Client(ChairFactory factory){
+        this.factory = factory;
+        this.chair = factory.createChair();
+    }
+    public void Sit() {
         this.chair.sitting();
     }
 }
 
-public class Main{
+public class Main {
     public static void main(String[] args) {
-        VictorianChair vict = new VictorianChair();
-        MultifunctionalChair multi = new MultifunctionalChair();
-        MagicChair magic = new MagicChair();
-
-        new Client(vict).sitting();
-        new Client(multi).sitting();
-        new Client(magic).sitting();
+        new Client(new VictorianChairFactory()).Sit();
+        new Client(new MultifunctionalChairFactory()).Sit();
+        new Client(new MagicChairFactory()).Sit();
     }
 }
